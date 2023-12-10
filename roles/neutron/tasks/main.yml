@@ -1,0 +1,14 @@
+---
+
+- name: install neutron
+  apt:
+    name: neutron-server
+    state: present
+  become: true
+
+- name: restart neutron
+  service:
+    name: neutron-server
+    state: restarted
+    enabled: yes
+  become: true
